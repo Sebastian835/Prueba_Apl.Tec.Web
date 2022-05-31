@@ -50,7 +50,7 @@ def Iniciar():
         result = np.where(lst == InicioNombre)
         print("result")  
         if(result):
-            return render_template('Sesion'):
+            return render_template('Sesion')
         else:
             return redirect(url_for('index'))   
     
