@@ -16,11 +16,11 @@
     {% block body %}
     <center>
         <h1>
-            Cliente
+            Registro de Cliente
         </h1>
         <br><br>
 
-        <!-- CAJA DE TEXTO PARA LAS TAREAS --->
+        <!-- CAJA PARA DATOS DEL CLIENTE --->
         <form action="/registros" method="POST">
             <input type="text" name="Nombre_Cliente" placeholder="Nombre">
             <input type="number" name="Cliente_Telefono" placeholder="Telfono">
@@ -31,24 +31,17 @@
                 <option value="Cercano">Cercano</option>
             </select>
             <br><br>
-            <!-- BOTON PARA MOSTRAR TAREAS -->
-            <button type="sbmit">Ingresar</button>
+            <!-- BOTON PARA REGISTRASE  -->
+            <button type="sbmit">Registrarse</button>
         </form>
         <br>
 
         <!--Para ir a la pagina Sesion-->
         <form>
-            <a href="Sesion"><input type="button" value="Iniciar Sesion"></a> 
+            <a href="Sesion"><input type="button" value="Inicio de Sesion"></a> 
         </form>
         <br>
         <br>
-
-        <!--
-            <br> {% for i in Datos_Cliente %}
-            <li>{{ i }}</li>
-         {% endfor %}        -->
-
-
 
     </center>
 

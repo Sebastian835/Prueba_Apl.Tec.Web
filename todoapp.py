@@ -37,6 +37,12 @@ def enviar():
 def Inicio_Sesion():
     return render_template('Sesion.html')
 
+@app.route('/InicioSesion')     #segunda ruta
+def Iniciar():
+
+
+    return render_template('Sesion.html')
+
 
 # main del programa
 if __name__ == '__main__':
