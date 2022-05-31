@@ -6,7 +6,7 @@ app = Flask(__name__)  # incializar variable
 # funcion de bienvenida
 @app.route('/')
 def index():
-    return render_template('index.html', Datos_Cliente = Nombre_Cliente)       #pasa el parametro al index
+    return render_template('index.html')       #pasa el parametro al index
 
 #arreglos Cliente
 Nombre_Cliente = []
@@ -33,15 +33,9 @@ def enviar():
 
       return redirect(url_for('index'))   
 
-
-'''@app.route('/borrar', methods=['POST']) 
-def borrar():
-    if request.method == 'POST':
-      tareaNombre.clear()
-      correo.clear()
-      prioridad.clear()
-      return redirect(url_for('index'))   
-'''
+@app.route('/Sesion')     #segunda ruta
+def Inicio_Sesion():
+    return render_template('Sesion.html')
 
 
 # main del programa
