@@ -15,32 +15,28 @@
     {% block body %}
     <center>
         <h1>
-            TO DO LIST
+            Cliente
         </h1>
         <br><br>
 
         <!-- CAJA DE TEXTO PARA LAS TAREAS --->
-        <form action="/enviar" method="POST">
-            <input type="text" name="Nombre_Tarea" placeholder="Tarea">
-            <input type="email" name="Correo" placeholder="Correo">
-            <select name="prioridad">
+        <form action="/registros" method="POST">
+            <input type="text" name="Nombre_Cliente" placeholder="Nombre">
+            <input type="number" name="Cliente_Telefono" placeholder="Telfono">
+            <select name="Cliente_estado">
                 <option></option>
-                <option value="Baja">Baja</option>
-                <option value="Media">Media</option>
-                <option value="Alta">Alta</option>
+                <option value="Normal">Normal</option>
+                <option value="Caso">Caso</option>
+                <option value="Cercano">Cercano</option>
             </select>
             <br><br>
             <!-- BOTON PARA MOSTRAR TAREAS -->
             <button type="sbmit">Ingresar</button>
         </form>
         <br>
-        <form action="/borrar" method="POST">
-            <button type="sbmit"> Borrar </button>
-        </form>
-
         <br>
 
-        <br> {% for i in Tarea_Nombre %}
+        <br> {% for i in Datos_Cliente %}
         <li>{{ i }}</li>
         {% endfor %}
 

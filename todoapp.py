@@ -6,42 +6,43 @@ app = Flask(__name__)  # incializar variable
 # funcion de bienvenida
 @app.route('/')
 def index():
-    return render_template('index.html', Tarea_Nombre = tareaNombre, Tarea_Correo = correo, Tarea_Prioridad = prioridad )       #pasa el parametro al index
+    return render_template('index.html', Datos_Cliente = Nombre_Cliente)       #pasa el parametro al index
 
-#arreglos
-cliente = []
-correo = []
-prioridad = []
+#arreglos Cliente
+Nombre_Cliente = []
+Nombre_Telefono = []
+Nombre_Estado = []
 
 #add_tareas
-@app.route('/cliente', methods=['POST'])  # recive atravez del metodo POST
+@app.route('/registros', methods=['POST'])  # recive atravez del metodo POST
 def enviar():
    if request.method == 'POST':
       # almacena el nombre de la tarea
-      Nombre_Tarea = request.form['Nombre_Tarea']
-      Correo_Tarea = request.form['Correo']
-      prioridad_Tarea = request.form['prioridad']
+      Cliente_Nombre = request.form['Nombre_Cliente']
+      Cliente_Telefono = request.form['Cliente_Telefono']
+      Cliente_Estado = request.form['Cliente_estado']
     
       #si faltan datos no ingresa al array 
-      if(Nombre_Tarea == "" or Correo_Tarea == "" or prioridad_Tarea == "" ):
+      if(Cliente_Nombre == "" or Cliente_Telefono == "" or Cliente_Estado == "" ):
           return redirect(url_for('index'))  
 
       #Almacener datos en los arreglos
-      tareaNombre.append(Nombre_Tarea)
-      correo.append(Correo_Tarea)
-      prioridad.append(prioridad_Tarea)
-      
+      Nombre_Cliente.append(Cliente_Nombre)
+      Nombre_Telefono.append(Cliente_Telefono)
+      Nombre_Estado.append(Cliente_Estado)
+
       return redirect(url_for('index'))   
 
 
-
-@app.route('/borrar', methods=['POST']) 
+'''@app.route('/borrar', methods=['POST']) 
 def borrar():
     if request.method == 'POST':
       tareaNombre.clear()
       correo.clear()
       prioridad.clear()
       return redirect(url_for('index'))   
+'''
+
 
 # main del programa
 if __name__ == '__main__':
