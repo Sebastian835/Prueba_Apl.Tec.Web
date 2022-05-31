@@ -38,9 +38,7 @@ def enviar():
 #segunda ruta
 @app.route('/Sesion')    
 def Inicio_Sesion():
-   
     return render_template('Sesion.html')
-
 
 @app.route('/Iniciar ', methods=['POST'])   
 def Iniciar():
@@ -55,6 +53,7 @@ def Iniciar():
             return redirect(url_for('index'))   
     
         #return render_template('Sesion')
+
 
 # main del programa
 if __name__ == '__main__':
